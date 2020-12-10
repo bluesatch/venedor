@@ -1,5 +1,9 @@
+
+
+
 class Store {
     constructor() {
+        
         this.itemsInCart = {
             itemCount: 0,
             subTotal: 0
@@ -96,7 +100,48 @@ class Store {
 
         }
 
+        this.friends = {
+            friend1: {
+                name: 'Alex',
+                img: 'media/alex.jpeg', 
+                alt: 'alex'
+            },
+
+            friend2: {
+                name: 'Crutch',
+                img: 'media/crutch.jpeg',
+                alt: 'crutch'
+            },
+
+            friend3: {
+                name: 'Joseph',
+                img: 'media/joseph.jpeg',
+                alt: 'Joseph'
+            },
+
+            friend4: {
+                name: 'Satch',
+                img: 'media/djdaddybug.jpeg',
+                alt: 'Satch'
+            },
+
+            friend5: {
+                name: 'Marlon',
+                img: 'media/marlon.jpeg',
+                alt: 'Marlon'
+            },
+
+            friend6: {
+                name: 'Toya',
+                img: 'media/toya.jpeg',
+                alt: 'Toya'
+            }
+
+            
+        }
+
     }
+
 
     loadItems() {
         // load items on page
@@ -121,7 +166,38 @@ class Store {
             count++;
         }
 
+
+        // facebook friends
+        let fbFriends1 = document.querySelector('.fb-friends2');
+        let fbFriends2 = document.querySelector('.fb-friends2')
+
+        for (const key in this.friends) {
+            const item = this.friends[key];
+            const friend = document.createElement('div');
+            friend.className = 'col-sm-4';
+
+            friend.innerHTML = `
+                <figure>
+                    <img src='${item.img}' alt='${item.alt}' class="img=fluid facebook-img">
+                    <figcaption>${item.name}</figcaption>
+                </figure>
+            `;
+
+            if (count < 3) {
+                fbFriends1.append(friend);
+            } else {
+                fbFriends2.append(friend);
+            }
+
+            count++
+        }
+
+
+        //  manufacturers
+        
+        
     }
+
     
     addToCart() {
 
@@ -157,7 +233,6 @@ class Store {
                 });
             
         }
-       
     }
 
     checkout() {
@@ -238,8 +313,9 @@ class Store {
 
     }
 
-    // homePage()
 }
+
+
 
 let action = new Store();
 
