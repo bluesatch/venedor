@@ -237,6 +237,7 @@ header {
     font-size: 10px;
     background: var(--primaryCo);
     color: #fff;
+    float: right; 
 }
 
 .colophon {

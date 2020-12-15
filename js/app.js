@@ -1,6 +1,3 @@
-
-
-
 class Store {
     constructor() {
         
@@ -264,11 +261,7 @@ class Store {
             for (const key in this.inventory) {
                 const item = this.inventory[key];
 
-                // qtyInput.innerText = item.qty;
-                // unitPrice.innerText = item.price.toFixed(2)
-                // productCode.innerText = item.productCode;
                 subTimesQty = (item.qty * item.price).toFixed(2);
-                // itemSub.innerText = subTimesQty.toFixed(2);
                 subtotalValue.innerText = this.itemsInCart.subTotal.toFixed(2);
                 shippingValue.innerText = shipping.toFixed(2);
                 tax = this.itemsInCart.subTotal * .07;
@@ -314,8 +307,6 @@ class Store {
     }
 
 }
-
-
 
 let action = new Store();
 
